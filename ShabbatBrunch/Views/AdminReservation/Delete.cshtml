@@ -1,0 +1,67 @@
+@model ShabbatBrunch.Models.Reservation
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+
+}
+
+<div class="min-h-screen h-auto flex flex-col justify-center gap-4">
+    <h1 class="text-2xl font-bold mb-4 text-center">Suppression d'une réservation</h1>
+
+    <div class="mx-auto w-auto">
+        <div class="bg-beige-200 p-6 md:p-8 lg:p-10 rounded-lg shadow-md">
+
+            <h4 class="text-xl font-medium mb-4 text-center">Reservation de @Html.DisplayFor(model => model.Nom)</h4>
+            <hr />
+
+            <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Nom:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Nom)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Prenom:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Prenom)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Telephone:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Telephone)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">NbCouvert:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.NbCouvert)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Date:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Date)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Heure:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Heure)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Commentaire:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Commentaire)</dd>
+                </div>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="mb-4">
+                    <button type="submit"
+                        class="bg-red-500 text-white p-2 rounded-md hover:bg-red-700">Supprimer</button>
+                    <span class="ml-2 text-blue-500 hover:underline"><a asp-action="Index">Retour à la liste</a></span>
+                </div>
+            </form>
+        </div>
+        <h3 class="text-lg font-medium text-gray-800 mb-4 text-center">Êtes vous sur de vouloir supprimer cette
+            réservation ?</h3>
+    </div>
+</div>

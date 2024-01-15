@@ -1,0 +1,30 @@
+@model ShabbatBrunch.Models.NewsletterModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+
+}
+
+<div class="min-h-screen h-auto flex flex-col justify-center gap-4">
+    <h1 class="text-2xl font-bold mb-4 text-center">Details</h1>
+
+    <div class="mx-auto w-auto">
+        <div class="bg-white p-6 md:p-8 lg:p-10 rounded-lg shadow-md">
+
+            <div>
+                <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                    <div class="mb-4">
+                        <dt class="text-sm font-medium text-gray-600">E-Mail:</dt>
+                        <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Mail)</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="mt-4 text-center">
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="text-marron-500 hover:underline">Edit</a> |
+                <a asp-action="Index" class="text-marron-500 hover:underline">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

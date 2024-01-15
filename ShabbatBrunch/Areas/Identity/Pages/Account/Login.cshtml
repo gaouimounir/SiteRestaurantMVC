@@ -1,0 +1,44 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Connexion";
+}
+
+<div class="min-h-screen w-screen flex items-center justify-center">
+    <div class="bg-white rounded-lg border-2 w-1/6 px-6 py-4 text-center ">
+        <h1 class="text-3xl font-semibold mb-6">@ViewData["Title"]</h1>
+
+        <form id="account" method="post" class="flex flex-col items-center justify-center">
+            <h2 class="text-lg font-semibold mb-4">Utilisez vos identifiants pour vous connecter.</h2>
+            <hr class="mb-4"/>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger " role="alert" ></div>
+
+            <div class="mb-3">
+                <label for="email" class="block text-gray-600 text-sm font-medium">Email</label>
+                <input asp-for="Input.Email" id="email" class="form-input" autocomplete="username"
+                       placeholder="name@example.com"/>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="block text-gray-600 text-sm font-medium">Mot de passe</label>
+                <input asp-for="Input.Password" id="password" class="form-input" autocomplete="current-password"
+                       placeholder="password"/>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div>
+                <button id="login-submit" type="submit"
+                        class="w-full bg-marron-900 text-white py-2 px-4 rounded-xl hover:bg-marron-600 focus:outline-none focus:shadow-outline-blue active:bg-marron-800 mt-4">
+                    Se connecter
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}

@@ -1,0 +1,81 @@
+@model IEnumerable<ShabbatBrunch.Models.CarteItem>
+
+@{
+    ViewData["Title"] = "Carte";
+        Layout = "~/Views/Shared/_LoginLayout.cshtml";
+
+}
+
+<div class="container mx-auto mt-8 text-center w-screen min-h-screen h-auto flex flex-col items-center justify-start gap-4">
+    <h1 class="text-4xl font-bold mb-2 title">Carte</h1>
+
+    <p>
+        <a asp-action="Create" class="text-beige-500 hover:underline hover:text-marron-500">Créer un nouvel article</a>
+    </p>
+
+    <div class="flex justify-center mx-auto ">
+        <table class=" w-full mt-2 border border-gray-100 rounded-lg p-2">
+            <thead class="bg-white/60">
+                <tr>
+                    <th class="py-2 px-4 border-b">
+                        @Html.DisplayNameFor(model => model.Nom)
+                    </th>
+                    <th class="py-2 px-4 border-b">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th class="py-2 px-4 border-b">
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th class="py-2 px-4 border-b">
+                        @Html.DisplayNameFor(model => model.Prix)
+                    </th>
+                    <th class="py-2 px-4 border-b">
+                        @Html.DisplayNameFor(model => model.Categorie)
+                    </th>
+                    <th class="py-2 px-4 border-b">
+                        @* @Html.DisplayNameFor(model => model.CreatedDate) *@
+                        Date de création
+                    </th>
+                    <th class="py-2 px-4 border-b">
+                        @* @Html.DisplayNameFor(model => model.ModifiedDate) *@
+                        Date de modification
+                    </th>
+                    <th class="py-2 px-4 border-b"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="py-2 px-4 border-b">
+                            @Html.DisplayFor(modelItem => item.Nom)
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            @Html.DisplayFor(modelItem => item.Image)
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            @Html.DisplayFor(modelItem => item.Prix)
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            @Html.DisplayFor(modelItem => item.Categorie)
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            @Html.DisplayFor(modelItem => item.ModifiedDate)
+                        </td>
+                        <td class="py-2 px-4 border-b">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="text-green-500 hover:underline">Éditer</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id" class="text-blue-500 hover:underline">Détails</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="text-red-500 hover:underline">Supprimer</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

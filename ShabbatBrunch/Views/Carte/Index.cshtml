@@ -1,0 +1,42 @@
+<!-- Votre fichier HTML -->
+@using ShabbatBrunch.Enums
+@model IEnumerable<ShabbatBrunch.Models.CarteItem>
+@{
+    ViewData["Title"] = "Carte Page";
+}
+
+<div class="main-container relative ">
+    <header class="title heading  top-10">Carte</header>
+    <div class="content  top-[10rem]">
+        <nav class="nav-bar gap-2">
+            @foreach (var category in Enum.GetValues(typeof(Categorie)).Cast<Categorie>())
+            {
+                <a asp-action="Index" asp-route-categorie="@category.ToString()" class="nav-link @(string.Equals(ViewData["SelectedCategorie"]?.ToString(), category.ToString(), StringComparison.OrdinalIgnoreCase) ? "active" : "")">@category.ToString()</a>
+            }
+        </nav>
+
+
+        <a asp-action="Index" asp-route-categorie="" class="all-link">Tous</a>
+
+
+        <p class="subtitle">@ViewData["SelectedCategorie"]</p>
+        <section class="grid-container">
+            @foreach (var article in Model)
+            {
+                <div class="card">
+                    <div class="">
+                        
+                        <img src=img/carte/@article.Image alt="Image" class="w-full h-36 object-cover "/>
+                        
+                    </div>
+                    <a asp-action="Details" asp-route-id="@article.Id" class="link">
+                    <h1 class="article-title  ">@article.Nom</h1> </a>
+                    <p class="article-description">@article.Description</p>
+                    <p class="article-price">
+                        @article.Prix<span class="euro-sign">€</span>
+                    </p>
+                </div>
+            }
+        </section>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+@model ShabbatBrunch.Models.Reservation
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+
+}
+
+<div class="min-h-screen h-auto flex flex-col justify-center gap-4">
+    <h1 class="text-2xl font-bold mb-4 text-center">Details d'une réservation</h1>
+
+    <div class="mx-auto w-auto">
+        <div class="bg-beige-200 p-6 md:p-8 lg:p-10 rounded-lg shadow-md">
+
+            <h4 class="text-xl font-medium mb-4 text-center">Reservation de @Html.DisplayFor(model => model.Nom)</h4>
+            <hr />
+
+            <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Nom:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Nom)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Prenom:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Prenom)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Telephone:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Telephone)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">NbCouvert:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.NbCouvert)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Date:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Date)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Heure:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Heure)</dd>
+                </div>
+
+                <div class="mb-4">
+                    <dt class="text-sm font-medium text-gray-600">Commentaire:</dt>
+                    <dd class="mt-1 text-sm text-gray-900">@Html.DisplayFor(model => model.Commentaire)</dd>
+                </div>
+            </dl>
+
+            <div class="mt-4 text-center">
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="text-blue-500 hover:underline">Modifier</a> |
+                <a asp-action="Index" class="text-blue-500 hover:underline">Retour a la liste</a>
+            </div>
+        </div>
+    </div>
+</div>

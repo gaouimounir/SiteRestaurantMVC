@@ -1,0 +1,65 @@
+@model ShabbatBrunch.Models.Avis
+
+@{
+    ViewData["Title"] = "Laisser un avis";
+}
+
+<div class="flex flex-col md:flex-row justify-center items-center">
+
+
+    <div class="flex flex-col w-[300px] m-4 md:w- mx-auto md:w-[20%] bg-beige-200 p-6 rounded-lg shadow-md">
+
+        @if (TempData["SuccessAvisMessage"] != null)
+        {
+            <h2 class="text-white bg-green-600 flex justify-center items-center mb-6">@TempData["SuccessAvisMessage"]
+            </h2>
+        }
+
+        <form id="avisForm" asp-controller="Avis" asp-action="Create">
+
+            <div class="-mx-3 flex flex-wrap">
+                <div class="px-3 w-full">
+                    <div class="mb-5">
+                        <label asp-for="Auteur" class="mb-3 block text-base font-medium text-[#07074D]">
+                            Nom
+                        </label>
+                        <input asp-for="Auteur"
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                        <span asp-validation-for="Auteur" class="text-red-600"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label asp-for="Contenu" class="mb-3 block text-base font-medium text-[#07074D]">
+                    Commentaire (max 500 caractères)
+                </label>
+                <textarea asp-for="Contenu"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"></textarea>
+                <span asp-validation-for="Contenu" class="text-red-600"></span>
+            </div>
+
+            <div class="mb-5">
+                <label asp-for="Note" class="mb-3 block text-base font-medium text-[#07074D]">
+                    Note entre 1 et 5
+                </label>
+                <select asp-for="Note">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+            </div>
+
+            <div>
+                <button
+                    class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                    Envoyer
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>

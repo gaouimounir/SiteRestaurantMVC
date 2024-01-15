@@ -1,0 +1,133 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="relative w-screen">
+    <img class="object-cover block w-full h-[650px]"
+         src="img/salon.jpg" alt="..."/>
+</div>
+
+
+<h1 class="text-center my-12 text-2xl title underline underline-offset-4"> A propos</h1>
+<div class=" flex flex-col justify-around items-center  md:flex-row ">
+    <div class="w-[25%] flex justify-center items-center  md:m-4">
+        <img
+            src="img/about.jpg"
+            class="rounded-xl w-[400px] h-[400px] object-cover sm:w-[450px] sm:h-[450px] md:w-[400px] md:h-[550px] m-2"
+            alt="..."/>
+    </div>
+    <div class="m-4 w-[50%] text-center flex flex-col justify-around items-center">
+        <section class=" text-xl text-beige-600 font-ubuntu m-2 font-heading">
+            Entrez dans un monde de saveurs exquises et de délices culinaires lors de notre brunch oriental inoubliable. Inspiré par les traditions et les épices envoûtantes du Moyen-Orient, cet événement gastronomique est une célébration de la richesse des plats de la région.
+        </section>
+
+        <section class="text-xl text-beige-700 font-ubuntu m-2 font-heading">
+            Dès votre arrivée, vous serez accueilli par les arômes envoûtants de l'encens et des épices qui empliront l'atmosphère. Notre décor somptueux, aux touches élégantes et authentiques, transportera vos sens dans un voyage vers les marchés animés du Moyen-Orient.
+        </section>
+
+        <section class="text-xl text-beige-800 font-ubuntu m-2 font-heading">
+            La table est dressée avec une variété de mets alléchants. Dégustez une sélection de mezze, des petites assiettes généreuses de houmous velouté, de baba ganoush fumé, de falafels croustillants et de taboulé parfumé. Les pains tout juste sortis du four, comme le pain pita moelleux et les pains plats traditionnels, accompagneront parfaitement ces délices.
+        </section>
+
+        <section class=" text-xl text-beige-900 font-ubuntu m-2 font-heading">
+
+            Les plats chauds ne manqueront pas de vous séduire. Des tajines aux senteurs envoûtantes, des kebabs juteux et des grillades aromatisées aux épices viendront ravir vos papilles. Sans oublier les douceurs sucrées : baklavas dorés, loukoums parfumés à la rose et autres pâtisseries délicates seront disponibles pour satisfaire votre dent sucrée.
+
+
+        </section>
+
+    </div>
+</div>
+<h1 class="text-center my-12 text-2xl title underline underline-offset-4 ">Menus</h1>
+<div class="flex flex-col justify-center items-center flex-wrap md:justify-around">
+
+    <div class="flex flex-col justify-center items-center flex-wrap md:flex-row md:justify-around">
+
+        <div
+            class="relative">
+            <a asp-controller="Carte" asp-action="Index" asp-route-categorie="Sucré">
+
+                <span class="font-ubuntu absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 text-center z-10 text-2xl text-beige-700 p-4 bg-white rounded-lg">Sucré</span>
+                <img
+                    src="img/sucré.jpg"
+                    class="hover:border-solid rounded hover:border-8 hover:border-marron-600 m-2 w-[400px] h-[400px] object-cover hover:scale-95 transition-all ease-in-out duration-[150ms]"
+                    alt="..."/>
+            </a>
+
+        </div>
+
+        <div class="relative">
+            <a asp-controller="Carte" asp-action="Index" asp-route-categorie="Salé">
+                <spanc class="font-ubuntu absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 text-center z-10 text-2xl text-beige-700 p-4 bg-white rounded-lg">Salé</spanc>
+                            <img
+                                src="img/salé.jpeg"
+                                class="hover:border-solid rounded hover:border-8 hover:border-marron-700 m-2 w-[400px] h-[400px] object-cover hover:scale-95 transition-all ease-in-out duration-[150ms] "
+                                alt="..."/>
+            </a>
+            
+        </div>
+    </div>
+    <div class="flex flex-col justify-center items-center flex-wrap md:flex-row md:justify-around">
+        <div class="relative">
+            <a asp-controller="Carte" asp-action="Index" asp-route-categorie="Boissons">
+                <span class="font-ubuntu absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 text-center z-10 text-2xl text-beige-700 p-4 bg-white rounded-lg">Soft</span>
+                            <img
+                                src="img/soft.jpeg"
+                                class="hover:border-solid rounded hover:border-8 hover:border-marron-900 m-2 w-[400px] h-[400px] object-cover hover:scale-95 transition-all ease-in-out duration-[150ms]"
+                                alt="..."/>
+            </a>
+            
+        </div>
+
+        <div class="relative">
+            <a asp-controller="Carte" asp-action="Index" asp-route-categorie="Extras">
+                <span class="font-ubuntu absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 text-center z-10 text-2xl text-beige-700 p-4 bg-white rounded-lg">Boissons</span>
+                            <img
+                                src="img/boissonsch.webp"
+                                class="hover:border-solid rounded hover:border-8 hover:border-marron-800 m-2 w-[400px] h-[400px] object-cover hover:scale-95 transition-all ease-in-out duration-[150ms]"
+                                alt="..."/>
+            </a>
+            
+        </div>
+
+    </div>
+
+</div>
+
+
+<h1 class="text-center my-12 text-2xl title underline underline-offset-4"> Adresses et horaires:</h1>
+<div class=" flex flex-col items-center md:flex-row md:justify-center">
+
+    <div class=" flex flex-col">
+        <div class=" items-center m-2">
+
+            <ul class="w-full justify-center rounded-xl overflow-hidden hover:bg-beige-200/60 shadow-lg bg-beige-200 p-6 flex flex-col items-center">
+                <li class="">La shabbat</li>
+                <li>47 Rue Barthélémy Delespaul</li>
+                <li> 59000 Lille</li>
+                <li>Tel : 09 70 72 70 71</li>
+            </ul>
+        </div>
+        <div class=" items-center m-2 ">
+
+            <ul class="w-full justify-center rounded-xl overflow-hidden hover:bg-beige-200/60 shadow-lg bg-beige-200 p-6 flex flex-col items-center">
+                <li>Lundi: <span>11h à 15h</span> </li>
+                <li>Mardi: <span>11h à 15h</span> </li>
+                <li>Mercredi: <span>11h à 15h</span></li>
+                <li>Jeudi: <span>11h à 15h</span> </li>
+                <li>Vendredi: <span>11h à 15h</span> </li>
+                <li>Samedi: <span>11h à 15h</span> </li>
+                <li>Dimanche: <span>11h à 15h</span> </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <div class=" m-2 flex items-center justify-center">
+        <div class="mx-14" style="overflow:hidden;resize:none;max-width:100%;width:600px; height:400px;">
+            <div id="gmap-canvas" style="height:100%; width:100%;max-width:100%;">
+                <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Simplon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+            </div><a class="my-codefor-googlemap" href="https://www.bootstrapskins.com/themes" id="enable-maps-data">premium bootstrap themes</a><style>#gmap-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
+        </div>
+    </div>
+</div>

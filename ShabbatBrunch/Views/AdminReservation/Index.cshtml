@@ -1,0 +1,64 @@
+@model IEnumerable<ShabbatBrunch.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+
+}
+
+<div class="min-h-screen h-auto flex flex-col justify-center gap-4">
+    <h1 class="text-2xl font-bold mb-4 text-center">Liste des Réservations</h1>
+
+    <p class="text-center">
+        <a asp-action="Create" class="text-blue-500 hover:underline">Ajouter une nouvelle réservation</a>
+    </p>
+
+    <div class="bg-beige-200 overflow-auto rounded-lg shadow-md">
+        <table class="min-w-full bg-beige-200 border border-gray-800">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="py-3 px-4 uppercase font-semibold text-sm border-b">Nom</th>
+                    <th class="py-3 px-4 uppercase font-semibold text-sm border-b">Prénom</th>
+                    <th class="py-3 px-4 uppercase font-semibold text-sm border-b">Téléphone</th>
+                    <th class="py-3 px-4 uppercase font-semibold text-sm border-b">Nombre de couvert</th>
+                    <th class="py-3 px-4 uppercase font-semibold text-sm border-b">Date</th>
+                    <th class="py-3 px-4 uppercase font-semibold text-sm border-b">Heure</th>
+                    <th class="py-3 px-4 uppercase font-semibold text-sm border-b">Commentaire</th>
+                    <th class="py-3 px-4 uppercase font-semibold text-sm border-b">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-700">
+                @foreach (var item in Model)
+                {
+                                <tr>
+                                    <td class="py-3 px-4 border-b">@Html.DisplayFor(modelItem => item.Nom)</td>
+                                    <td class="py-3 px-4 border-b">@Html.DisplayFor(modelItem => item.Prenom)</td>
+                                    <td class="py-3 px-4 border-b">
+                                        <a href="tel:@Html.DisplayFor(modelItem => item.Telephone)" class="hover:text-blue-500">
+                                @Html.DisplayFor(modelItem => item.Telephone)
+                                        </a>
+                                    </td>
+                                    <td class="py-3 px-4 border-b">
+                                        <a class="hover:text-blue-500">@Html.DisplayFor(modelItem => item.NbCouvert)</a>
+                                    </td>
+                                    <td class="py-3 px-4 border-b">
+                                        <a class="hover:text-blue-500">@Html.DisplayFor(modelItem => item.Date)</a>
+                                    </td>
+                                    <td class="py-3 px-4 border-b">
+                                        <a class="hover:text-blue-500">@Html.DisplayFor(modelItem => item.Heure)</a>
+                                    </td>
+                                    <td class="py-3 px-4 border-b">
+                                        <a class="hover:text-blue-500">@Html.DisplayFor(modelItem => item.Commentaire)</a>
+                                    </td>
+
+                                    <td class="py-3 px-4 border-b">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="text-green-500 hover:underline">Modifier</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="text-blue-500 hover:underline">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-red-500 hover:underline">Supprimer</a>
+                                    </td>
+                                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

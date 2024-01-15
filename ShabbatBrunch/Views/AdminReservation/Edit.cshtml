@@ -1,0 +1,81 @@
+@model ShabbatBrunch.Models.Reservation
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+
+}
+
+<div class="min-h-screen h-auto flex flex-col justify-center gap-4">
+    <h1 class="text-2xl font-bold mb-4 text-center">Modification d'une réservation</h1>
+
+    <div class="mx-auto w-auto">
+        <div class="bg-beige-200 p-6 md:p-8 lg:p-10 rounded-lg shadow-md mb-12">
+
+            <h4 class="text-xl font-medium mb-4 text-center">Reservation de @Html.DisplayFor(model => model.Nom)</h4>
+            <hr />
+
+            <form asp-action="Edit" class="space-y-4">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-4">
+                    <label asp-for="Nom" class="block text-sm font-medium text-gray-600">Nom:</label>
+                    <input asp-for="Nom" class="mt-1 p-2 w-full md:w-96 border rounded-md" />
+                    <span asp-validation-for="Nom" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Prenom" class="block text-sm font-medium text-gray-600">Prenom:</label>
+                    <input asp-for="Prenom" class="mt-1 p-2 w-full md:w-96 border rounded-md" />
+                    <span asp-validation-for="Prenom" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Telephone" class="block text-sm font-medium text-gray-600">Telephone:</label>
+                    <input asp-for="Telephone" class="mt-1 p-2 w-full md:w-96 border rounded-md" />
+                    <span asp-validation-for="Telephone" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="NbCouvert" class="block text-sm font-medium text-gray-600">NbCouvert:</label>
+                    <input asp-for="NbCouvert" class="mt-1 p-2 w-full md:w-32 border rounded-md" />
+                    <span asp-validation-for="NbCouvert" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Date" class="block text-sm font-medium text-gray-600">Date:</label>
+                    <input asp-for="Date" class="mt-1 p-2 w-full md:w-96 border rounded-md" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Heure" class="block text-sm font-medium text-gray-600">Heure:</label>
+                    <input asp-for="Heure" class="mt-1 p-2 w-full md:w-64 border rounded-md" />
+                    <span asp-validation-for="Heure" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Commentaire" class="block text-sm font-medium text-gray-600">Commentaire:</label>
+                    <input asp-for="Commentaire" class="mt-1 p-2 w-full md:w-96 border rounded-md" />
+                    <span asp-validation-for="Commentaire" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <button type="submit"
+                        class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 w-full">Enregistrer</button>
+                </div>
+            </form>
+
+            <div class="mt-4 text-center">
+                <a asp-action="Index" class="text-blue-500 hover:underline">Retour à la liste</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

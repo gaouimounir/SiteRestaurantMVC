@@ -1,0 +1,66 @@
+@using System.Collections
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using ShabbatBrunch.Enums
+@model ShabbatBrunch.Models.CarteItem
+
+@{
+    ViewData["Title"] = "Créer un article";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    var categories = ViewData["Categories"] as SelectList;
+}
+
+<div class="min-h-screen h-auto flex flex-col justify-center gap-4">
+    <h1 class="text-2xl font-bold mb-4 text-center">Nouvel Article</h1>
+
+    <div class="mx-auto w-auto">
+        <div class="bg-white p-6 md:p-8 lg:p-10 rounded-lg shadow-md">
+
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="mb-4">
+                    <label asp-for="Nom" class="block text-sm font-medium text-gray-600">Nom:</label>
+                    <input asp-for="Nom" class="mt-1 p-2 w-full md:w-96 border rounded-md"/>
+                    <span asp-validation-for="Nom" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Description" class="block text-sm font-medium text-gray-600">Description:</label>
+                    <input asp-for="Description" class="mt-1 p-2 w-full md:w-96 border rounded-md"/>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Image" class="block text-sm font-medium text-gray-600">Image:</label>
+                    <input lang="fr" asp-for="Image" type="file" class="mt-1 p-2 w-full md:w-96 border rounded-md"/>
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Prix" class="block text-sm font-medium text-gray-600">Prix(€):</label>
+                    <input asp-for="Prix" class="mt-1 p-2 w-full md:w-32 border rounded-md"/>
+                    <span asp-validation-for="Prix" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Categorie" class="block text-sm font-medium text-gray-600">Categorie:</label>
+                    <select asp-for="Categorie" asp-items="@(ViewData["Categories"] as SelectList)" class="mt-1 p-2 w-full md:w-32 border rounded-md"></select>
+                    <span asp-validation-for="Categorie" class="text-danger"></span>
+                </div>
+
+
+                <div class="mb-4">
+                    <button type="submit" class="bg-marron-500 text-white p-2 rounded-md hover:bg-marron-700 w-full">Create</button>
+                </div>
+            </form>
+
+            <div class="mt-4 text-center">
+                <a asp-action="Index" class="text-beige-500 hover:underline hover:text-marron-500">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

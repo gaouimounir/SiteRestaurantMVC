@@ -1,0 +1,110 @@
+/* Importation de polices Google */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
+
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles spÃ©cifiques aux composants */
+/* input.css */
+
+@tailwind components;
+
+/* Container */
+.main-container {
+    @apply w-screen h-auto bg-gray-50 flex flex-col items-center justify-center;
+}
+
+/* Heading */
+.title {
+    @apply font-bold text-2xl font-bitter text-marron-900 text-3xl md:text-4xl lg:text-5xl;
+}
+
+/* Content */
+.content {
+    @apply w-full md:w-5/6 h-auto flex flex-col justify-between items-center shadow-red-500 border-2 border-marron-900 rounded-xl mt-4;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    @apply bg-marron-900 rounded-b-lg p-4 flex justify-around;
+}
+
+/* Navigation Link */
+.nav-bar a {
+    @apply text-beige-400 hover:text-marron-900 hover:bg-white/60 active:bg-white px-3 py-2 rounded-md text-sm font-medium;
+    @apply transition duration-300;
+}
+
+/* Active Navigation Link */
+.nav-bar a.active {
+    @apply text-marron-900 bg-white underline;
+}
+
+/* All Link */
+.all-link {
+    @apply text-marron-900 hover:text-white hover:bg-marron-900/60 active:bg-white px-3 py-2 rounded-b-md text-sm font-medium;
+    @apply transition duration-300;
+}
+
+/* Subtitle */
+.subtitle {
+    @apply pt-10 text-lg md:text-2xl text-marron-800;
+}
+
+/* Grid Container */
+.grid-container {
+    @apply w-full h-auto md:w-5/6 mx-auto sm:m-2 my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10;
+}
+
+/* Card */
+.card {
+    @apply bg-white h-full mx-auto rounded-md shadow-md text-center ;
+    @apply w-2/3 sm:w-2/3 md:w-5/6 lg:w-5/6 xl:w-full h-full;
+    @apply flex flex-col ;
+}
+
+/* Article Title */
+.article-title {
+    @apply text-marron-800 text-lg md:text-xl lg:text-2xl font-semibold font-ubuntu hover:text-marron-900 hover:underline;
+}
+
+/* Article Description */
+.article-description {
+    @apply text-marron-800 text-sm md:text-base lg:text-lg font-open-sans;
+}
+
+/* Article Price */
+.article-price {
+    @apply bg-white p-2 rounded-xl text-sm md:text-base lg:text-lg text-marron-800 font-open-sans;
+    /* Article Price */
+
+    .article-price {
+        @apply flex items-center bg-white p-2 rounded-xl text-sm md:text-base lg:text-lg text-marron-800;
+    }
+
+    /* Euro Sign */
+
+    .euro-sign {
+        @apply ml-1;
+        /* Adjust the margin as needed */
+    }
+
+    .menuListResponse {
+        @apply flex flex-col text-center justify-center items-center h-screen w-screen bg-white/60 gap-2 absolute;
+    }
+
+    
+    
+    
+
+
+}
+
+/* navbar responsive */
+
+
+@tailwind utilities;
