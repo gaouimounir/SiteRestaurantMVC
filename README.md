@@ -21,22 +21,6 @@ En résumé, notre chef-d'œuvre représente bien plus qu'une simple application
 - Sqlite en dev 
 - Postgre en déploiement  
 
-### Configuration de l'Environnement de Développement
-- Ouvrez un terminal :
-- Naviguez vers le répertoire où vous souhaitez cloner le projet :
-  Utilisez la commande cd pour naviguer vers le répertoire où vous souhaitez stocker le projet cloné.
-  `cd chemin/vers/le/repertoire`
-- Clonez le projet :
-`git clone https://github.com/simplon-lille-csharp-dotnet/ShabbatBrunch.git`
-Cette commande créera une copie locale du projet sur votre machine.
-Accédez au répertoire du projet cloné :
-Utilisez la commande cd pour entrer dans le répertoire du projet cloné.
-`cd shabbatbrunch`
-
-- Une fois que tout celà est fait rester dans le dossier du projet et faire un `dotnet restore` pour installer les dépendances nécéssaire
-pour le projet
-- Ensuite faire un `dotnet run watch`pour lancer le projet initial
-- suivis d'un `npm run build` pour lancer le projet et la configuration de tailwindCss
 
 ### Base de Données et Migrations
 - Pour créer une migrations utiliser la cmd `dotnet ef migrations add choisirnomdelamigration`
@@ -44,21 +28,13 @@ pour le projet
 
 ### Structure du Projet
 #### le projet c'est un site mettant en avant :
-- Une page Home qui résume ce qu'est le restaurant et ce qu'il propose avec l'adresse et les horaires du restaurant
 
-<img src="ShabbatBrunch/wwwroot/img/imgreadme/home.png" width="500px">
+- Une page Home qui résume ce qu'est le restaurant et ce qu'il propose avec l'adresse et les horaires du restaurant
 
 - Une page Carte qui représentes les différents plat proposer avec leurs prix
 
-<img src="ShabbatBrunch/wwwroot/img/imgreadme/carte.png" width="500px">
-
 - Une page Reservation qui permet de réserver une table le nombre de couverts et une remarque spécifient ce que le client ne veux pas voir dans son plats
 
-<img src="ShabbatBrunch/wwwroot/img/imgreadme/reserver.png" width="500px">
-
-- Une page Avis qui permet d'ajouter un avis et une note 
-
-<img src="ShabbatBrunch/wwwroot/img/imgreadme/posteavis.png" width="500px">
 
 
 ### Administration
@@ -67,22 +43,11 @@ avec un compte crée uniquement en bdd et aucunement avec un formulaire traditio
 et on y retrouve : 
 - Une page Carte qui permet de voir d'éditez et de supprimer les élement de la carte
 
-<img src="ShabbatBrunch/wwwroot/img/imgreadme/carteAdmin.png" width="500px">
 
 - Une page Réservation qui permet de voir d'éditez et de supprimer les élement de la Réservation 
 
-<img src="ShabbatBrunch/wwwroot/img/imgreadme/reservationAdmin.png" width="500px">
-
-- Une page NewsLetter qui permet de voir d'éditez et de supprimer les élement de la NewsLetter
 
 
-
-
-
-### DDCU et MCD
-- Diagrammes de cas d'utilisation :
-
-<img src="ShabbatBrunch/wwwroot/img/imgreadme/ddcu_update.png" width="500px">
 
 
 
