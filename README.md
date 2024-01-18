@@ -43,15 +43,4 @@ avec un compte crée uniquement en bdd et aucunement avec un formulaire traditio
 et on y retrouve : 
 - Une page Carte qui permet de voir d'éditez et de supprimer les élement de la carte
 
-
 - Une page Réservation qui permet de voir d'éditez et de supprimer les élement de la Réservation 
-
-
-
-
-
-
-
-
-- MCD : 
-
